@@ -57,7 +57,10 @@ export default class Day extends PureComponent {
 
     return (
       <li
-        style={color ? {color} : null}
+        style={{
+          color: color ? color : null
+
+        }}
         className={classNames(styles.root, {
           [styles.today]: isToday,
           [styles.highlighted]: isHighlighted,

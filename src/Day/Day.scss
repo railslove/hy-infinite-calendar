@@ -1,14 +1,15 @@
 @import "../variables";
+$rH: 1em;
 
 @mixin circle() {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: $rowHeight - 4px;
-  height: $rowHeight - 4px;
-  margin-top: -0.5 * ($rowHeight - 4px);
-  margin-left: -0.5 * ($rowHeight - 4px);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  margin-top: var(--margin);
+  margin-left: var(--margin);
   border-radius: 50%;
 }
 
@@ -16,7 +17,6 @@
   display: inline-block;
   box-sizing: border-box;
   width: 1 / 7 * 100%;
-
   list-style: none;
 
   text-align: center;
@@ -25,6 +25,8 @@
   user-select: none;
 
   &.enabled {
+    font-size: 0.35em;
+
     &.highlighted, &:active, &:hover {
       position: relative;
       z-index: 1;
@@ -87,7 +89,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      line-height: $rowHeight;
+      flex: 1 auto;
+      line-height: var(--row-height);
       z-index: 2;
 
       .day {
@@ -97,6 +100,7 @@
     }
   }
   &.disabled {
+    font-size: 0.35em;
     color: $textColorDisabled;
     cursor: not-allowed;
   }
@@ -126,9 +130,9 @@
       position: absolute;
       top: 50%;
       width: 50%;
-      height: $rowHeight - 4px;
-      margin-top: -0.5 * ($rowHeight - 4px);
-      box-shadow: inset $rowHeight $rowHeight;
+      height: var(--circle-size);
+      margin-top: var(--margin);
+      box-shadow: inset var(--row-height) var(--row-height);
     }
   }
 
@@ -165,7 +169,7 @@
     .selection {
       left: 0;
       right: 0;
-      width: 100%;
+      width: 100% !important;
       margin-left: 0;
       display: flex;
       justify-content: center;

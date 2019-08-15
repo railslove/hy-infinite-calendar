@@ -307,7 +307,7 @@ export default class Calendar extends Component {
         className={classNames(className, styles.container.root, {
           [styles.container.landscape]: layout === 'landscape',
         })}
-        style={{color: theme.textColor.default, width}}
+        style={{ color: theme.textColor.default, fontSize: `${rowHeight}px`, width}}
         aria-label="Calendar"
         ref={node => {
           this.node = node;

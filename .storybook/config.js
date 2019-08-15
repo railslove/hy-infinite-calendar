@@ -1,5 +1,6 @@
 import {configure} from '@kadira/storybook';
 import {setOptions} from '@kadira/storybook-addon-options';
+import 'ie11-custom-properties'
 
 setOptions({
   name: 'INFINITE CALENDAR',

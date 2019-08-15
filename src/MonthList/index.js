@@ -186,7 +186,9 @@ export default class MonthList extends Component {
         onScroll={onScroll}
         scrollOffset={scrollTop}
         className={classNames(styles.root, {[styles.scrolling]: isScrolling})}
-        style={{lineHeight: `${rowHeight}px`}}
+        style={{lineHeight: `${rowHeight}px`, "--row-height": `${this.props.rowHeight}px`,
+          "--margin": `${-0.5 * (this.props.rowHeight - 4) }px`,
+          "--circle-size": `${this.props.rowHeight - 4}px`,}}
         overscanCount={overscanMonthCount}
       />
     );

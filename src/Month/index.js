@@ -70,6 +70,7 @@ export default class Month extends PureComponent {
             monthShort={monthShort}
 						theme={theme}
             year={year}
+            rowHeight={rowHeight}
             {...passThrough.Day}
 					/>
 				);
