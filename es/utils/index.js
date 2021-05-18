@@ -70,6 +70,11 @@ export function getRenderedWeekRows(start, date, weekStartsOn) {
   var startDate = typeof start === 'number' ? new Date(start, 0, 1) // 1st Jan of the Year
   : start;
 
+  if (isAfter(startDate, date)) {
+    console.log('d was after date');
+    startDate = date;
+  }
+
   var renderedWeeks = 0;
 
   // Loop from start to date in monthly steps

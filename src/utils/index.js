@@ -63,16 +63,16 @@ function isInCurrentMonth(controlVar, elimVar) {
 }
 
 export function getRenderedWeekRows(start, date, weekStartsOn) {
-  const startDate = (typeof start === 'number')
+  let startDate = (typeof start === 'number')
     ? new Date(start, 0, 1) // 1st Jan of the Year
     : start;
-
-  let renderedWeeks = 0;
 
   if(isAfter(startDate, date)) {
     console.log('d was after date');
     startDate = date;
   }
+
+  let renderedWeeks = 0;
 
   // Loop from start to date in monthly steps
   for (let d = startDate; !isInCurrentMonth(d, date); d.setMonth(d.getMonth() + 1)) {
